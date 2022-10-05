@@ -1,0 +1,14 @@
+{% for phen in json.allelePhenotypes %}
+
+	{% if patallele in phen.allele or revallele in phen.allele %}
+
+		INSERT INTO pat.Annotations VALUES(
+			"{{json.id | safe}}",
+			"{{patallele | safe}}",
+			"{{phen.id | safe}}",
+			'{{phen.phenotype | e}}'
+		);
+
+	{% endif %}
+
+{% endfor %}

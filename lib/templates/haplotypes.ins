@@ -1,0 +1,23 @@
+INSERT INTO Haplotypes VALUES(
+	"{{json.gene.id}}",	
+	"{{json.id}}",
+	"{{json.symbol}}",
+	"{{json.name}}",
+	"{{json.hgvs}}"
+	);
+
+{% for doc in json.alleles %}
+	{% if doc.allele %}
+			INSERT INTO HapVars VALUES(
+				"{{json.id}}",
+				"{{doc.location.displayName}}",
+				{% if "del" in doc.allele %}
+				"-"
+				{% elif "ins" in doc.allele %}
+				"{{doc.allele|replace('ins', '')}}"
+				{% else %}
+				"{{doc.allele}}"
+				{% endif %}
+		);
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,14 @@
+{% for sample in record.samples %}
+
+	INSERT INTO pat.Variants VALUES (
+		"{{record.CHROM}}",
+		"{{record.POS}}",
+		"{{record.REF}}",
+		"{{record.ALT[0]}}",
+		"{{sample.GT}}",
+		"{{sample.gt_bases}}",
+		"{{sample.PID}}",
+		"{{sample.PGT}}"
+	);
+
+{% endfor %}

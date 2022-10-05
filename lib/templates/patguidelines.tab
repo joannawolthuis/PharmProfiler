@@ -1,0 +1,8 @@
+CREATE TABLE pat.Guidelines (
+	GuID text,
+	Genotype text,
+	MetaCat text,
+	Strength text,
+	Term text,
+	Markdown text
+);

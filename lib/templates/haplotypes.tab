@@ -1,0 +1,14 @@
+CREATE TABLE Haplotypes (
+	GeneID text,
+	HapID text,
+	HapName text,
+	Starname text,
+	HGVS text
+);
+
+CREATE TABLE HapVars (
+	HapID text,
+	VarName text,
+	AltAllele text
+);
+

@@ -1,0 +1,19 @@
+{% if json %}
+
+	{% for doc in json %}
+
+		{% for obj in doc.location.linkedObjects %}
+		
+			INSERT INTO Annotations VALUES(
+				"{{doc.id}}",		
+				"{{obj.id}}",
+				"{{DrugID}}",
+				"{{doc.levelOfEvidence.term}}",
+				"{{obj.objCls}}"
+			);
+			
+		{% endfor %}
+
+	{% endfor %}
+
+{% endif %}

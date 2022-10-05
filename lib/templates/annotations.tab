@@ -1,0 +1,7 @@
+CREATE TABLE Annotations (
+	AnID text,
+	VarHapID text,
+	DrugID text,
+	LoE text,
+	ObjCls text
+);

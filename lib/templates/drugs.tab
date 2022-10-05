@@ -1,0 +1,11 @@
+CREATE TABLE Drugs (
+	DrugID text,
+	ChemName text,
+	ChemFormula text
+);
+
+CREATE TABLE DrugTerms (
+	DrugID text,
+	Resource text,
+	Term text
+);

@@ -1,0 +1,15 @@
+INSERT INTO Drugs VALUES(
+	"{{json.id}}",
+	"{{json.name}}",
+	"{{json.smiles}}"
+);
+
+{% for doc in json.terms %}
+
+	INSERT INTO DrugTerms VALUES(
+		"{{json.id}}",
+		"{{doc.resource}}",
+		"{{doc.term}}"
+	);
+
+{% endfor %}

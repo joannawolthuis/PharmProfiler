@@ -1,0 +1,5 @@
+CREATE TABLE DrugVars(
+	DrugID text,
+	VarID text,
+	VarName text
+);

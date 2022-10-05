@@ -1,0 +1,12 @@
+# no db files
+*.fasta
+*.dnd
+*.tex
+*.db
+*.pyc
+*.fa
+.DS_Store
+./fasta/
+./workdir/
+output/
+lib/output/

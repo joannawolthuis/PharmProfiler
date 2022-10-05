@@ -1,0 +1,8 @@
+CREATE TABLE Guidelines (
+	GuID text,
+	GeneID text,
+	DrugID text,
+	Source text,
+	Summary text,
+	Markdown text
+);

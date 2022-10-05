@@ -1,0 +1,17 @@
+{% if "success" in json.status %}
+
+	{% for gene in json.data %}
+
+		{% for hap in gene.options %}
+
+			INSERT INTO GuideOptions VALUES(
+				"{{guid}}",
+				"{{gene.symbol}}",
+				"{{hap}}"
+			);
+
+		{% endfor %}
+
+	{% endfor %}
+
+{% endif %}

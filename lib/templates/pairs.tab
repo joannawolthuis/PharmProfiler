@@ -1,0 +1,5 @@
+CREATE TABLE Pairs (
+	PairID integer PRIMARY KEY AUTOINCREMENT,
+	GeneID text,
+	DrugID text
+);

@@ -1,0 +1,10 @@
+CREATE TABLE pat.Variants (
+	Chromosome text,
+	Start integer,
+	RefAllele text,
+	AltAllele text,
+	CallNum text,
+	CallBase text,
+	PID text,
+	PGT text
+);

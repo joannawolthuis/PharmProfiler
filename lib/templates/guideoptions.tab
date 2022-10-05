@@ -1,0 +1,5 @@
+CREATE TABLE GuideOptions (
+	GuID text,
+	GeneSymbol text,
+	Starname text
+);

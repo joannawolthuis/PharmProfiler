@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS Variants (
+	VarID text,
+	GeneID text,
+	RSID text,
+	Significance text,
+	MutType text,
+	UNIQUE(VarID, GeneID) ON CONFLICT IGNORE
+);
+
+CREATE TABLE LocPGKB (
+	VarID text,
+	RefGenome text,
+	Chromosome text,
+	Start integer,
+	End integer,
+	RefAllele text
+);
+
+CREATE TABLE AltAlleles (
+	VarID text,
+	AltPGKB text,
+	AltVCF text
+);

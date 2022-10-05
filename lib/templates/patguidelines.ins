@@ -1,0 +1,16 @@
+{% if json.data %}
+
+	{% for ann in json.data.annotations %}
+
+	INSERT INTO pat.Guidelines VALUES(
+				'{{guid}}',
+				'{{genotype | safe }}',
+				'{{json.data.name}}',
+				'{{json.data.strength.term}}',
+				'{{ann.type.term}}',
+				'{{ann.markdown.markdown | safe }}'
+			);
+
+	{% endfor %}
+
+{% endif %}

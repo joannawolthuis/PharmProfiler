@@ -1,0 +1,34 @@
+{% if json.id %}
+
+	INSERT INTO VARIANTS VALUES(
+		"{{json.id}}",
+		"{{json.gid}}",
+		"{{json.id}}",
+		"Unknown",
+		"{{json.muttype}}"
+	);
+
+	INSERT INTO LocPGKB VALUES(
+		"{{json.id}}",
+		"{{json.id}}",
+		"{{json.loc | replace("chr", "")}}",
+		"{{json.begin}}",
+		"{{json.end}}",
+		"{{json.ref}}"
+	);
+
+	{% if json.ref != json.alt %}
+
+		INSERT INTO AltAlleles VALUES(
+				"{{json.id}}",
+				"{{json.alt}}",
+				{% if json.muttype == "snp" %}
+				"{{json.alt}}"
+				{% elif json.muttype != "snp" %}
+				"NeedsConverting"
+				{% endif %}
+		);
+
+	{% endif %}
+
+{% endif %}

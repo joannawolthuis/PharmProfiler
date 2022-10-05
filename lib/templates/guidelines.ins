@@ -1,0 +1,16 @@
+{% if json %}
+
+	{% for doc in json %}
+		{% for gene in doc.relatedGenes %}
+			INSERT INTO Guidelines VALUES(
+				"{{doc.id}}",
+				"{{gene.id}}",
+				"{{did}}",
+				"{{doc.source}}",
+				"{{doc.summaryMarkdown.markdown | e }}",
+				"{{doc.textMarkdown.markdown | e }}"
+			);
+		{% endfor %}
+	{% endfor %}
+
+{% endif %}
